@@ -15,6 +15,7 @@ class Episodes {
         JSONParser.shared.parseJSON(from: url, to: EpisodesData.self) { (data, info) in
             if let jsonData = data as? EpisodesData, let jsonEpisodes = jsonData.results {
                 self.list += jsonEpisodes
+                completion()
             }
         }
     }

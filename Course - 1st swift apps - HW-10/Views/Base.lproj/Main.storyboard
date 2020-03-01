@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZiD-eR-0hd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Jk-WT-Nsn">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -199,6 +199,41 @@
             </objects>
             <point key="canvasLocation" x="2552" y="117"/>
         </scene>
+        <!--Loading View Controller-->
+        <scene sceneID="iOQ-hs-3dF">
+            <objects>
+                <viewController id="6Jk-WT-Nsn" customClass="LoadingViewController" customModule="Course___1st_swift_apps___HW_10" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ndx-n3-zRP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenPicture" translatesAutoresizingMaskIntoConstraints="NO" id="JI8-PR-ziX">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="xYx-5r-Vyn">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="JI8-PR-ziX" secondAttribute="bottom" id="ETD-0C-dYX"/>
+                            <constraint firstItem="JI8-PR-ziX" firstAttribute="leading" secondItem="Ndx-n3-zRP" secondAttribute="leading" id="PWP-6c-aO0"/>
+                            <constraint firstItem="xYx-5r-Vyn" firstAttribute="centerY" secondItem="Ndx-n3-zRP" secondAttribute="centerY" id="TD2-Th-2WE"/>
+                            <constraint firstItem="JI8-PR-ziX" firstAttribute="trailing" secondItem="Ndx-n3-zRP" secondAttribute="trailing" id="a7Z-st-btA"/>
+                            <constraint firstItem="xYx-5r-Vyn" firstAttribute="centerX" secondItem="Ndx-n3-zRP" secondAttribute="centerX" id="oQp-oI-zMe"/>
+                            <constraint firstItem="JI8-PR-ziX" firstAttribute="top" secondItem="Ndx-n3-zRP" secondAttribute="top" id="uhW-ii-Xth"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ch2-fW-JH1"/>
+                    </view>
+                    <connections>
+                        <segue destination="ZiD-eR-0hd" kind="presentation" identifier="showMain" modalPresentationStyle="fullScreen" id="frP-GY-Jte"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="szf-u4-eax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-550.72463768115949" y="116.51785714285714"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="RP1-Gi-Y3h">
             <objects>
@@ -227,4 +262,7 @@
             <point key="canvasLocation" x="161" y="117"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchScreenPicture" width="751" height="1334"/>
+    </resources>
 </document>
