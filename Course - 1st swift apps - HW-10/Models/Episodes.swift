@@ -16,6 +16,7 @@ class Episodes {
     }
     
     func getEpisodes(from url: String, completion: @escaping () -> Void) {
+        // Рекурсия до тех пор, пока не дойдём до последнего файла
         if url == "" { completion() }
         
         JSONParser.shared.parseJSON(from: url, to: EpisodesData.self) { (data, info) in

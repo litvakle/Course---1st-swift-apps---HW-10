@@ -9,7 +9,7 @@
 import UIKit
 
 class CharactersCollectionViewController: UICollectionViewController {
-
+    
     // MARK: - Private Properties
     private var cellIdentifier = "characterCell"
     private var characterSegueIdentifier = "showCharacter"
@@ -18,20 +18,21 @@ class CharactersCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Characters.shared.list.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! CharacterCollectionViewCell
         
         cell.configure(with: Characters.shared.list[indexPath.item])
-    
+        
         return cell
     }
-
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == characterSegueIdentifier {
             guard let cvc = segue.destination as? CharacterViewController else { return }
             guard let character = sender as? RMCharacter else { return }
+            
             cvc.character = character
         }
     }
@@ -50,6 +51,7 @@ extension CharactersCollectionViewController: UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = UIScreen.main.bounds.width/2 - 2
+       
         return CGSize(width: size, height: size)
     }
 }

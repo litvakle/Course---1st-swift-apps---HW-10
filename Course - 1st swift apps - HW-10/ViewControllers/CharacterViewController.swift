@@ -20,16 +20,16 @@ class CharacterViewController: UIViewController {
     var character: RMCharacter!
     
     // MARK: - Override methods
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         characterImageView.layer.cornerRadius = 10
+        
+        updateView()
+    }
+    
+    // MARK: - Private methods
+    private func updateView() {
         activityIndicator.startAnimating()
         characterNameLabel.text = character.name
         characterInfoLabel.text = character.description

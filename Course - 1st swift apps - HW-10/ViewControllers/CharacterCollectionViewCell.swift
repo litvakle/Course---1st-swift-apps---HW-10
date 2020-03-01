@@ -19,6 +19,7 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     // MARK: - Public metrhods
     func configure(with character: RMCharacter) {
         characterView.layer.cornerRadius = 10
+        
         characterImage.isHidden = true
         characterLabel.isHidden = true
         activityIndicator.startAnimating()
@@ -29,9 +30,10 @@ class CharacterCollectionViewCell: UICollectionViewCell {
             guard let imageData = try? Data(contentsOf: imageURL) else { return }
             
             DispatchQueue.main.async {
-                self.activityIndicator.stopAnimating()
                 self.characterImage.image = UIImage(data: imageData)
                 self.characterLabel.text = character.name
+                
+                self.activityIndicator.stopAnimating()
                 self.characterImage.isHidden = false
                 self.characterLabel.isHidden = false
             }

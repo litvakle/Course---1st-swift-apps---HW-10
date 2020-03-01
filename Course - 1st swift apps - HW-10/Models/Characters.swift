@@ -12,6 +12,7 @@ class Characters {
     var list = [RMCharacter]()
     
     func getCharacters(from url: String, completion: @escaping () -> Void) {
+        // Рекурсия до тех пор, пока не дойдём до последнего файла
         if url == "" { completion() }
         
         JSONParser.shared.parseJSON(from: url, to: CharactersData.self) { (data, info) in
@@ -29,7 +30,7 @@ struct CharactersData: Decodable {
     var results: [RMCharacter]? = nil
 }
 
-struct RMCharacter: Decodable {
+struct RMCharacter: Decodable { // добавил "RM", чтобы не совпало с название предопределённого типа Character
     let species: String?
     let origin: Origin?
     let location: Location?
