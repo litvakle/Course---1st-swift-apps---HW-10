@@ -12,11 +12,16 @@ class CharactersCollectionViewController: UICollectionViewController {
 
     // MARK: - Private Properties
     private var characters = Characters()
+    private var cellIdentifier = "characterCell"
+    private var characterSegueIdentifier = "showCharacter"
+    
 //    private var images = [UIImage]()
     
     // MARK: - Override functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.register(CharacterCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
         
         characters.getCharacters(from: DataURL.shared.characters) { 
             DispatchQueue.main.async {
@@ -47,7 +52,7 @@ class CharactersCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CharacterCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! CharacterCollectionViewCell
         
 //        let index = indexPath.item
 //        let image = images.count > index ? images[index] : nil
@@ -59,7 +64,7 @@ class CharactersCollectionViewController: UICollectionViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showCharacter" {
+        if segue.identifier == characterSegueIdentifier {
             guard let cvc = segue.destination as? CharacterViewController else { return }
             guard let character = sender as? RMCharacter else { return }
             cvc.character = character
@@ -82,6 +87,6 @@ extension CharactersCollectionViewController: UICollectionViewDelegateFlowLayout
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let character = characters.list[indexPath.item]
-        performSegue(withIdentifier: "showCharacter", sender: character)
+        performSegue(withIdentifier: characterSegueIdentifier, sender: character)
     }
 }
