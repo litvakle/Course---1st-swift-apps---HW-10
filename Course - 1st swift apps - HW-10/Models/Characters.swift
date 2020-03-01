@@ -6,14 +6,28 @@
 //  Copyright © 2020 Lev Litvak. All rights reserved.
 //
 
-struct Origin: Decodable {
-    let name: String?
-    let url: String?
+import UIKit
+
+class Characters {
+    var list = [RMCharacter]()
+    
+    func getCharacters(from url: String, completion: @escaping ()->Void) {
+        if url == "" {
+            completion()
+        }
+        
+        JSONParser.shared.parseJSON(from: url) { (data, info) in
+            if let jsonData = data as? RMData, let jsonCharacters = jsonData.results {
+                self.list += jsonCharacters
+                self.getCharacters(from: jsonData.info?.next ?? "", completion: completion)
+            }
+        }
+    }
 }
 
-struct Location: Decodable {
-    let name: String?
-    let url: String?
+struct RMData: Decodable {
+    var info: Info? = nil
+    var results: [RMCharacter]? = nil
 }
 
 struct RMCharacter: Decodable {
@@ -25,16 +39,29 @@ struct RMCharacter: Decodable {
     let name: String?
     let gender: String?
     let status: String?
+    
+    var description: String {
+        return """
+        Gender: \(gender ?? "unknown")
+        Status: \(status ?? "unknown")
+        Species: \(species ?? "unknown")
+        Origin: \(origin?.name ?? "unknown")
+        Location: \(location?.name ?? "unknown")
+        """
+    }
+}
+
+struct Origin: Decodable {
+    let name: String?
+    let url: String?
+}
+
+struct Location: Decodable {
+    let name: String?
+    let url: String?
 }
 
 struct Info: Decodable {
     let next: String?
     let prev: String?
 }
-
-struct Characters: Decodable {
-    let info: Info?
-    let results: [RMCharacter]?
-}
-
-
