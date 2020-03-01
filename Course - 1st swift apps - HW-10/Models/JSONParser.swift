@@ -32,10 +32,3 @@ class JSONParser {
         }.resume()
     }
 }
-
-class DataURL {
-    static let shared = DataURL()
-    
-    let characters = "https://rickandmortyapi.com/api/character/"
-    let episodes = "https://rickandmortyapi.com/api/episode/"
-}

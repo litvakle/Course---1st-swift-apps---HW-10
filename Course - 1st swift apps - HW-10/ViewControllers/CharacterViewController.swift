@@ -29,6 +29,7 @@ class CharacterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        characterImageView.layer.cornerRadius = 10
         activityIndicator.startAnimating()
         characterNameLabel.text = character.name
         characterInfoLabel.text = character.description

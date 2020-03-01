@@ -6,18 +6,16 @@
 //  Copyright © 2020 Lev Litvak. All rights reserved.
 //
 
-import UIKit
-
 class Characters {
+    static var shared = Characters()
+    
     var list = [RMCharacter]()
     
     func getCharacters(from url: String, completion: @escaping ()->Void) {
-        if url == "" {
-            completion()
-        }
+        if url == "" { completion() }
         
-        JSONParser.shared.parseJSON(from: url, to: RMData.self) { (data, info) in
-            if let jsonData = data as? RMData, let jsonCharacters = jsonData.results {
+        JSONParser.shared.parseJSON(from: url, to: CharactersData.self) { (data, info) in
+            if let jsonData = data as? CharactersData, let jsonCharacters = jsonData.results {
                 self.list += jsonCharacters
                 self.getCharacters(from: jsonData.info?.next ?? "", completion: completion)
             }
@@ -25,7 +23,8 @@ class Characters {
     }
 }
 
-struct RMData: Decodable {
+// MARK: - JSON Struct
+struct CharactersData: Decodable {
     var info: Info? = nil
     var results: [RMCharacter]? = nil
 }

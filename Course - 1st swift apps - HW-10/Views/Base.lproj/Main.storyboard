@@ -33,6 +33,10 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aDn-P4-pxQ">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                         </imageView>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="axh-B3-CgM">
+                                            <rect key="frame" x="140" y="140" width="20" height="20"/>
+                                            <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </activityIndicatorView>
                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character short info" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEV-Q8-YY8">
                                             <rect key="frame" x="0.0" y="240" width="300" height="60"/>
                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,6 +49,8 @@
                                         <constraint firstAttribute="bottom" secondItem="aDn-P4-pxQ" secondAttribute="bottom" id="4Ul-fE-eha"/>
                                         <constraint firstAttribute="trailing" secondItem="XEV-Q8-YY8" secondAttribute="trailing" id="Obm-8q-vK4"/>
                                         <constraint firstAttribute="bottom" secondItem="XEV-Q8-YY8" secondAttribute="bottom" id="P0k-0a-2yB"/>
+                                        <constraint firstItem="axh-B3-CgM" firstAttribute="centerX" secondItem="hHs-cA-poU" secondAttribute="centerX" id="URO-dc-61h"/>
+                                        <constraint firstItem="axh-B3-CgM" firstAttribute="centerY" secondItem="hHs-cA-poU" secondAttribute="centerY" id="awH-ij-SQO"/>
                                         <constraint firstAttribute="trailing" secondItem="aDn-P4-pxQ" secondAttribute="trailing" id="cIA-hP-BRV"/>
                                         <constraint firstItem="aDn-P4-pxQ" firstAttribute="leading" secondItem="hHs-cA-poU" secondAttribute="leading" id="iri-5x-n8b"/>
                                         <constraint firstItem="XEV-Q8-YY8" firstAttribute="height" secondItem="aDn-P4-pxQ" secondAttribute="height" multiplier="0.2" id="jAy-Yz-A4K"/>
@@ -53,6 +59,7 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="axh-B3-CgM" id="9Sl-qQ-ak3"/>
                                     <outlet property="characterImage" destination="aDn-P4-pxQ" id="kqy-X2-UNA"/>
                                     <outlet property="characterLabel" destination="XEV-Q8-YY8" id="5fX-IF-MNn"/>
                                 </connections>

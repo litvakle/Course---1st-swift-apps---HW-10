@@ -13,30 +13,26 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     // MARK: - IB Outlets
     @IBOutlet weak var characterImage: UIImageView!
     @IBOutlet weak var characterLabel: UILabel!
-    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
     // MARK: - Public metrhods
     func configure(with character: RMCharacter) {
         characterImage.isHidden = true
         characterLabel.isHidden = true
+        activityIndicator.startAnimating()
         
-//        if image != nil {
-//            characterImage.image = image
-//            characterLabel.text = character.name
-//            self.characterImage.isHidden = false
-//            self.characterLabel.isHidden = false
-//        } else {
-            DispatchQueue.global().async {
-                guard let stringURL = character.image else { return }
-                guard let imageURL = URL(string: stringURL) else { return }
-                guard let imageData = try? Data(contentsOf: imageURL) else { return }
-                
-                DispatchQueue.main.async {
-                    self.characterImage.image = UIImage(data: imageData)
-                    self.characterLabel.text = character.name
-                    self.characterImage.isHidden = false
-                    self.characterLabel.isHidden = false
-                }
+        DispatchQueue.global().async {
+            guard let stringURL = character.image else { return }
+            guard let imageURL = URL(string: stringURL) else { return }
+            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+            
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+                self.characterImage.image = UIImage(data: imageData)
+                self.characterLabel.text = character.name
+                self.characterImage.isHidden = false
+                self.characterLabel.isHidden = false
             }
-//        }
+        }
     }
 }
