@@ -62,6 +62,7 @@
                                     <outlet property="activityIndicator" destination="axh-B3-CgM" id="9Sl-qQ-ak3"/>
                                     <outlet property="characterImage" destination="aDn-P4-pxQ" id="kqy-X2-UNA"/>
                                     <outlet property="characterLabel" destination="XEV-Q8-YY8" id="5fX-IF-MNn"/>
+                                    <outlet property="characterView" destination="hHs-cA-poU" id="6lg-so-d1g"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

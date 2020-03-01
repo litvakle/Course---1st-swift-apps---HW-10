@@ -11,12 +11,14 @@ import UIKit
 class CharacterCollectionViewCell: UICollectionViewCell {
 
     // MARK: - IB Outlets
+    @IBOutlet weak var characterView: UIView!
     @IBOutlet weak var characterImage: UIImageView!
     @IBOutlet weak var characterLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     // MARK: - Public metrhods
     func configure(with character: RMCharacter) {
+        characterView.layer.cornerRadius = 10
         characterImage.isHidden = true
         characterLabel.isHidden = true
         activityIndicator.startAnimating()
