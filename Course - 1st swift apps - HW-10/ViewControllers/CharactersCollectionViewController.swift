@@ -21,7 +21,7 @@ class CharactersCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.register(CharacterCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
+//        collectionView.register(CharacterCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
         
         characters.getCharacters(from: DataURL.shared.characters) { 
             DispatchQueue.main.async {
