@@ -14,6 +14,11 @@ class LoadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loadData()
+    }
+    
+    // MARK: - Private methods
+    private func loadData() {
         Characters.shared.getCharacters(from: DataURL.shared.characters) {
             Episodes.shared.getEpisodes(from: DataURL.shared.episodes) {
                 DispatchQueue.main.async {

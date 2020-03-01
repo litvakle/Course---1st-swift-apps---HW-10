@@ -11,7 +11,7 @@ class Characters {
     
     var list = [RMCharacter]()
     
-    func getCharacters(from url: String, completion: @escaping ()->Void) {
+    func getCharacters(from url: String, completion: @escaping () -> Void) {
         if url == "" { completion() }
         
         JSONParser.shared.parseJSON(from: url, to: CharactersData.self) { (data, info) in
@@ -52,15 +52,12 @@ struct RMCharacter: Decodable {
 
 struct Origin: Decodable {
     let name: String?
-    let url: String?
 }
 
 struct Location: Decodable {
     let name: String?
-    let url: String?
 }
 
 struct Info: Decodable {
     let next: String?
-    let prev: String?
 }

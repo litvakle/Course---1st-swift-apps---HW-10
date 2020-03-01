@@ -27,8 +27,14 @@ class EpisodesTableViewController: UITableViewController {
 
         let index = indexPath.row
         if let episodes = character.episode {
-            cell.textLabel?.text = episodes[index]
-            cell.textLabel?.textColor = UIColor.white
+            let url = episodes[index]
+            
+            if let episode = Episodes.shared.getEpisode(by: url) {
+                cell.textLabel?.text = "\(episode.episode ?? "") - \(episode.name ?? "")"
+                cell.detailTextLabel?.text = "Release date: \(episode.air_date ?? "")"
+                cell.textLabel?.textColor = UIColor.white
+                cell.detailTextLabel?.textColor = UIColor.white
+            }
         }
         
         return cell
