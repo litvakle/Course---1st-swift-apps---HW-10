@@ -13,7 +13,8 @@ class JSONParser {
     
     typealias CompletionHandler<T> = (_ data: T?, _ info: String) -> Void
     
-    func parseJSON(from url: String, completionHandler: @escaping CompletionHandler<Any>) {
+    func parseJSON<T>(from url: String, to type: T.Type, completionHandler: @escaping CompletionHandler<Any>) where T: Decodable {
+        
         guard let url = URL(string: url) else {
             completionHandler(nil, "Address is not valid URL")
             return
@@ -23,7 +24,7 @@ class JSONParser {
             guard let data = data else { return }
             do {
                 let decoder = JSONDecoder()
-                let result = try decoder.decode(RMData.self, from: data) //
+                let result = try decoder.decode(type, from: data) //
                 completionHandler(result, "Success")
             } catch {
                 completionHandler(nil,"Decoding error: \(error)")

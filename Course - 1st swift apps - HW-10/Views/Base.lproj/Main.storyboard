@@ -92,12 +92,28 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R2n-cU-LLW">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKh-a9-EQw">
                                                 <rect key="frame" x="0.0" y="51" width="394" height="394"/>
+                                                <subviews>
+                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="NXi-BR-dH2">
+                                                        <rect key="frame" x="178.5" y="178.5" width="37" height="37"/>
+                                                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </activityIndicatorView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R2n-cU-LLW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="394"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="R2n-cU-LLW" secondAttribute="height" multiplier="1:1" id="XTb-4B-71E"/>
+                                                    <constraint firstItem="R2n-cU-LLW" firstAttribute="top" secondItem="cKh-a9-EQw" secondAttribute="top" id="DQQ-fR-q7n"/>
+                                                    <constraint firstItem="NXi-BR-dH2" firstAttribute="centerY" secondItem="cKh-a9-EQw" secondAttribute="centerY" id="K6Y-UR-XKf"/>
+                                                    <constraint firstAttribute="width" secondItem="cKh-a9-EQw" secondAttribute="height" multiplier="1:1" id="iiV-Rp-kks"/>
+                                                    <constraint firstItem="NXi-BR-dH2" firstAttribute="centerX" secondItem="cKh-a9-EQw" secondAttribute="centerX" id="kui-DD-T76"/>
+                                                    <constraint firstAttribute="trailing" secondItem="R2n-cU-LLW" secondAttribute="trailing" id="mAG-5A-df7"/>
+                                                    <constraint firstAttribute="bottom" secondItem="R2n-cU-LLW" secondAttribute="bottom" id="p93-ye-a1i"/>
+                                                    <constraint firstItem="R2n-cU-LLW" firstAttribute="leading" secondItem="cKh-a9-EQw" secondAttribute="leading" id="uOE-Kg-cBs"/>
                                                 </constraints>
-                                            </imageView>
+                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYz-Kn-Myn">
                                                 <rect key="frame" x="0.0" y="455" width="394" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -127,8 +143,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9t6-hz-ll2"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Info" id="RYc-E1-pbO"/>
+                    <navigationItem key="navigationItem" title="Info" id="RYc-E1-pbO">
+                        <barButtonItem key="rightBarButtonItem" title="Episodes" id="eHD-0u-6CQ">
+                            <connections>
+                                <segue destination="K2s-X4-PhG" kind="show" identifier="showEpisodes" id="kKp-gU-okW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="NXi-BR-dH2" id="VMq-AZ-RSW"/>
                         <outlet property="characterImageView" destination="R2n-cU-LLW" id="I9m-Vu-Qla"/>
                         <outlet property="characterInfoLabel" destination="nYz-Kn-Myn" id="z3C-mc-W7V"/>
                         <outlet property="characterNameLabel" destination="hmF-a9-IVX" id="Iw2-Uz-hze"/>
@@ -137,6 +160,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wQ5-IW-w6W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1769.5652173913045" y="116.51785714285714"/>
+        </scene>
+        <!--Episodes-->
+        <scene sceneID="M1C-bD-e3M">
+            <objects>
+                <tableViewController id="K2s-X4-PhG" customClass="EpisodesTableViewController" customModule="Course___1st_swift_apps___HW_10" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tyj-8p-e3e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="episodeCell" id="gaQ-UW-MfB">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gaQ-UW-MfB" id="etN-ND-Nqh">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="K2s-X4-PhG" id="keS-R1-xtT"/>
+                            <outlet property="delegate" destination="K2s-X4-PhG" id="uwC-Eq-JKf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Episodes" id="xRh-vc-b6N"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s0k-W9-fbM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2552" y="117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RP1-Gi-Y3h">

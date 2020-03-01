@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A83F486240AC97E0012B642 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83F485240AC97E0012B642 /* CharacterViewController.swift */; };
+		3A83F488240BCE110012B642 /* EpisodesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83F487240BCE110012B642 /* EpisodesTableViewController.swift */; };
 		3A8B0667240A4D3300CF0849 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B0666240A4D3300CF0849 /* AppDelegate.swift */; };
 		3A8B0669240A4D3300CF0849 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B0668240A4D3300CF0849 /* SceneDelegate.swift */; };
 		3A8B066E240A4D3300CF0849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8B066C240A4D3300CF0849 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		3A83F485240AC97E0012B642 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		3A83F487240BCE110012B642 /* EpisodesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTableViewController.swift; sourceTree = "<group>"; };
 		3A8B0663240A4D3300CF0849 /* Course - 1st swift apps - HW-10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Course - 1st swift apps - HW-10.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8B0666240A4D3300CF0849 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A8B0668240A4D3300CF0849 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				3A8B0683240A594E00CF0849 /* CharactersCollectionViewController.swift */,
 				3A8B0685240A5BF500CF0849 /* CharacterCollectionViewCell.swift */,
 				3A83F485240AC97E0012B642 /* CharacterViewController.swift */,
+				3A83F487240BCE110012B642 /* EpisodesTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				3A8B0688240A5EC700CF0849 /* NetworkManager.swift in Sources */,
 				3A83F486240AC97E0012B642 /* CharacterViewController.swift in Sources */,
 				3A8B0669240A4D3300CF0849 /* SceneDelegate.swift in Sources */,
+				3A83F488240BCE110012B642 /* EpisodesTableViewController.swift in Sources */,
 				3A8B067E240A4D5900CF0849 /* Characters.swift in Sources */,
 				3A8B0684240A594E00CF0849 /* CharactersCollectionViewController.swift in Sources */,
 			);

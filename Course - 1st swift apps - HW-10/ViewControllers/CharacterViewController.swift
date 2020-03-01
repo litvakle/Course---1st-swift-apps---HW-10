@@ -14,6 +14,7 @@ class CharacterViewController: UIViewController {
     @IBOutlet weak var characterNameLabel: UILabel!
     @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterInfoLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Public properties
     var character: RMCharacter!
@@ -27,7 +28,8 @@ class CharacterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        activityIndicator.startAnimating()
         characterNameLabel.text = character.name
         characterInfoLabel.text = character.description
         
@@ -37,8 +39,17 @@ class CharacterViewController: UIViewController {
             guard let imageData = try? Data(contentsOf: imageURL) else { return }
             
             DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
                 self.characterImageView.image = UIImage(data: imageData)
             }
+        }
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showEpisodes" {
+            let etvc = segue.destination as! EpisodesTableViewController
+            etvc.character = character
         }
     }
 }

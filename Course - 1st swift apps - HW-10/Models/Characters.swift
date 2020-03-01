@@ -16,7 +16,7 @@ class Characters {
             completion()
         }
         
-        JSONParser.shared.parseJSON(from: url) { (data, info) in
+        JSONParser.shared.parseJSON(from: url, to: RMData.self) { (data, info) in
             if let jsonData = data as? RMData, let jsonCharacters = jsonData.results {
                 self.list += jsonCharacters
                 self.getCharacters(from: jsonData.info?.next ?? "", completion: completion)
