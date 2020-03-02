@@ -34,14 +34,19 @@ class CharacterViewController: UIViewController {
         characterNameLabel.text = character.name
         characterInfoLabel.text = character.description
         
-        DispatchQueue.global().async {
-            guard let stringURL = self.character.image else { return }
-            guard let imageURL = URL(string: stringURL) else { return }
-            guard let imageData = try? Data(contentsOf: imageURL) else { return }
-            
-            DispatchQueue.main.async {
-                self.activityIndicator.stopAnimating()
-                self.characterImageView.image = UIImage(data: imageData)
+        if let image = Images.shared.images[character.id] {
+            self.activityIndicator.stopAnimating()
+            characterImageView.image = image
+        } else {
+            DispatchQueue.global().async {
+                guard let imageData = Images.shared.getImageData(from: self.character.image) else { return }
+                
+                DispatchQueue.main.async {
+                    if let image = UIImage(data: imageData) {
+                        self.activityIndicator.stopAnimating()
+                        self.characterImageView.image = image
+                    }
+                }
             }
         }
     }

@@ -20,23 +20,38 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     func configure(with character: RMCharacter) {
         characterView.layer.cornerRadius = 10
         
+        hideCell()
+        
+        let index = character.id
+        if let image = Images.shared.images[index] {
+            showCell(character, image)
+        } else {
+            DispatchQueue.global().async {
+                guard let imageData = Images.shared.getImageData(from: character.image) else { return }
+                
+                DispatchQueue.main.async {
+                    if let image = UIImage(data: imageData) {
+                        self.showCell(character, image)
+                        Images.shared.images[index] = image
+                    }
+                }
+            }
+        }
+    }
+    
+    // MARK: - Private methods
+    func hideCell() {
         characterImage.isHidden = true
         characterLabel.isHidden = true
         activityIndicator.startAnimating()
+    }
+    
+    func showCell(_ character: RMCharacter, _ image: UIImage) {
+        self.characterImage.image = image
+        self.characterLabel.text = character.name
         
-        DispatchQueue.global().async {
-            guard let stringURL = character.image else { return }
-            guard let imageURL = URL(string: stringURL) else { return }
-            guard let imageData = try? Data(contentsOf: imageURL) else { return }
-            
-            DispatchQueue.main.async {
-                self.characterImage.image = UIImage(data: imageData)
-                self.characterLabel.text = character.name
-                
-                self.activityIndicator.stopAnimating()
-                self.characterImage.isHidden = false
-                self.characterLabel.isHidden = false
-            }
-        }
+        self.activityIndicator.stopAnimating()
+        self.characterImage.isHidden = false
+        self.characterLabel.isHidden = false
     }
 }

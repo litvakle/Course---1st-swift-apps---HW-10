@@ -22,6 +22,7 @@
 		3AEBB1AA240BE6CB00447550 /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBB1A9240BE6CB00447550 /* Episodes.swift */; };
 		3AEBB1AC240BE73D00447550 /* DataURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBB1AB240BE73D00447550 /* DataURL.swift */; };
 		3AEBB1AE240BECE500447550 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBB1AD240BECE500447550 /* LoadingViewController.swift */; };
+		3AEBB1B0240D7F0F00447550 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBB1AF240D7F0F00447550 /* Images.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		3AEBB1A9240BE6CB00447550 /* Episodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
 		3AEBB1AB240BE73D00447550 /* DataURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataURL.swift; sourceTree = "<group>"; };
 		3AEBB1AD240BECE500447550 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		3AEBB1AF240D7F0F00447550 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			children = (
 				3A8B067D240A4D5900CF0849 /* Characters.swift */,
 				3AEBB1A9240BE6CB00447550 /* Episodes.swift */,
+				3AEBB1AF240D7F0F00447550 /* Images.swift */,
 				3AEBB1AB240BE73D00447550 /* DataURL.swift */,
 				3A8B0687240A5EC700CF0849 /* JSONParser.swift */,
 			);
@@ -201,6 +204,7 @@
 				3AEBB1AA240BE6CB00447550 /* Episodes.swift in Sources */,
 				3A8B0671240A4D3300CF0849 /* Course___1st_swift_apps___HW_10.xcdatamodeld in Sources */,
 				3A8B0667240A4D3300CF0849 /* AppDelegate.swift in Sources */,
+				3AEBB1B0240D7F0F00447550 /* Images.swift in Sources */,
 				3A8B0688240A5EC700CF0849 /* JSONParser.swift in Sources */,
 				3A83F486240AC97E0012B642 /* CharacterViewController.swift in Sources */,
 				3AEBB1AC240BE73D00447550 /* DataURL.swift in Sources */,

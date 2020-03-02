@@ -22,7 +22,8 @@ class CharactersCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! CharacterCollectionViewCell
         
-        cell.configure(with: Characters.shared.list[indexPath.item])
+        let index = indexPath.item
+        cell.configure(with: Characters.shared.list[index])
         
         return cell
     }
@@ -42,15 +43,15 @@ class CharactersCollectionViewController: UICollectionViewController {
         performSegue(withIdentifier: characterSegueIdentifier, sender: character)
     }
 }
-
+    
 // MARK: - Extension + CharactersCollectionViewController
 extension CharactersCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 4
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = UIScreen.main.bounds.width/2 - 2
+        let size = UIScreen.main.bounds.width/2 - 4
        
         return CGSize(width: size, height: size)
     }

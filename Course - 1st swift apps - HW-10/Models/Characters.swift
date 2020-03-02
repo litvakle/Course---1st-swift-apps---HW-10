@@ -12,6 +12,7 @@ class Characters {
     var list = [RMCharacter]()
     
     func getCharacters(from url: String, completion: @escaping () -> Void) {
+        // В каждом файле есть ссылка на файл со следующей порцией персонажей
         // Рекурсия до тех пор, пока не дойдём до последнего файла
         if url == "" { completion() }
         
@@ -31,6 +32,7 @@ struct CharactersData: Decodable {
 }
 
 struct RMCharacter: Decodable { // добавил "RM", чтобы не совпало с название предопределённого типа Character
+    let id: Int
     let species: String?
     let origin: Origin?
     let location: Location?

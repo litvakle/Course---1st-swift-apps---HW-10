@@ -16,6 +16,7 @@ class Episodes {
     }
     
     func getEpisodes(from url: String, completion: @escaping () -> Void) {
+        // В каждом файле есть ссылка на файл со следующей порцией эпизодов
         // Рекурсия до тех пор, пока не дойдём до последнего файла
         if url == "" { completion() }
         

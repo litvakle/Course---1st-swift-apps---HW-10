@@ -14,10 +14,6 @@ class EpisodesTableViewController: UITableViewController {
     var character: RMCharacter!
     
     // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return character.episode?.count ?? 0
     }
@@ -26,6 +22,7 @@ class EpisodesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath)
 
         let index = indexPath.row
+        
         if let episodes = character.episode {
             let url = episodes[index]
             
