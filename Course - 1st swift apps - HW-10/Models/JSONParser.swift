@@ -7,16 +7,18 @@
 //
 
 import Foundation
+import Alamofire
 
 class JSONParser {
     static let shared = JSONParser()
     
-    typealias CompletionHandler<T> = (_ data: T?, _ info: String) -> Void
+    typealias CompletionHandler<T> = (_ data: T?) -> Void
     
     func parseJSON<T>(from url: String, to type: T.Type, completionHandler: @escaping CompletionHandler<Any>) where T: Decodable {
         
         guard let url = URL(string: url) else {
-            completionHandler(nil, "Address is not valid URL")
+            print("Address is not valid URL")
+            completionHandler(nil)
             return
         }
         
@@ -25,10 +27,23 @@ class JSONParser {
             do {
                 let decoder = JSONDecoder()
                 let result = try decoder.decode(type, from: data) //
-                completionHandler(result, "Success")
+                completionHandler(result)
             } catch {
-                completionHandler(nil,"Decoding error: \(error)")
+                print("Decoding error: \(error)")
+                completionHandler(nil)
             }
         }.resume()
+    }
+    
+    func parseJSONwithAlamofire<T>(from url: String, to type: T.Type, completion: @escaping CompletionHandler<Any>) where T: Decodable{
+        AF .request(url).validate().responseDecodable(of: type) { dataResponce in
+            switch dataResponce.result {
+            case .success(let value):
+                completion(value)
+            case .failure(let error):
+                print("Error: \(error)")
+                completion(nil)
+            }
+        }
     }
 }

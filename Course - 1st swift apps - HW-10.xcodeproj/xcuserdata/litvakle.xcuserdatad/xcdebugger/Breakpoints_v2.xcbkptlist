@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "3DB27A8E-5BF1-4753-8AF7-5FD94FEFC358"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D77F0EEC-FE48-4766-9AA6-892492BFC0EA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Course - 1st swift apps - HW-10/Models/Characters.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "getCharacters(from:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BCB55474-CFCA-431E-8A9B-701AE8A0B563"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Course - 1st swift apps - HW-10/Models/Episodes.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "getEpisodes(from:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BCB55474-CFCA-431E-8A9B-701AE8A0B563 - cd18063ccf8f4d7c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Course___1st_swift_apps___HW_10.Episodes.getEpisodes(from: Swift.String, completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "Course - 1st swift apps - HW-10"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/litvakle/developer/Course%20-%201st%20swift%20apps/HW%2010-01/Course%20-%201st%20swift%20apps%20-%20HW-10/Course%20-%201st%20swift%20apps%20-%20HW-10/Models/Episodes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "BCB55474-CFCA-431E-8A9B-701AE8A0B563 - bf13e9526ad58b32"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.String) -&gt; () in Course___1st_swift_apps___HW_10.Episodes.getEpisodes(from: Swift.String, completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "Course - 1st swift apps - HW-10"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/litvakle/developer/Course%20-%201st%20swift%20apps/HW%2010-01/Course%20-%201st%20swift%20apps%20-%20HW-10/Course%20-%201st%20swift%20apps%20-%20HW-10/Models/Episodes.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "221">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A653BA46-D54E-4ED2-A0AE-17FC6BC3D14F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Course - 1st swift apps - HW-10/ViewControllers/CharacterCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "configure(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EFFBE6C5-3E17-4D60-ABF5-601FF71CE8B3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Course - 1st swift apps - HW-10/ViewControllers/CharacterViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "updateView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

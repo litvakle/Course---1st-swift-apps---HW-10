@@ -1,6 +1,6 @@
 //
 //  CharacterCollectionViewCell.swift
-//  Course - 1st swift apps - HW-10
+//  Course - 1st swift apps - HW-11
 //
 //  Created by Lev Litvak on 29.02.2020.
 //  Copyright © 2020 Lev Litvak. All rights reserved.

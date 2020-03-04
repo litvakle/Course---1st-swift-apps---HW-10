@@ -14,12 +14,18 @@ class Characters {
     func getCharacters(from url: String, completion: @escaping () -> Void) {
         // В каждом файле есть ссылка на файл со следующей порцией персонажей
         // Рекурсия до тех пор, пока не дойдём до последнего файла
-        if url == "" { completion() }
-        
-        JSONParser.shared.parseJSON(from: url, to: CharactersData.self) { (data, info) in
-            if let jsonData = data as? CharactersData, let jsonCharacters = jsonData.results {
-                self.list += jsonCharacters
-                self.getCharacters(from: jsonData.info?.next ?? "", completion: completion)
+        if url == "" { completion() } else {
+            //        JSONParser.shared.parseJSON(from: url, to: CharactersData.self) { data in
+            //            if let jsonData = data as? CharactersData, let jsonCharacters = jsonData.results {
+            //                self.list += jsonCharacters
+            //                self.getCharacters(from: jsonData.info?.next ?? "", completion: completion)
+            //            }
+            //        }
+            JSONParser.shared.parseJSONwithAlamofire(from: url, to: CharactersData.self) { data in
+                if let jsonData = data as? CharactersData, let jsonCharacters = jsonData.results {
+                    self.list += jsonCharacters
+                    self.getCharacters(from: jsonData.info?.next ?? "", completion: completion)
+                }
             }
         }
     }

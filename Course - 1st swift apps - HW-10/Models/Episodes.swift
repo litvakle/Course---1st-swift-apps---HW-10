@@ -7,7 +7,7 @@
 //
 
 class Episodes {
-    static var shared = Episodes()
+    static let shared = Episodes()
     
     var list = [Episode]()
     
@@ -18,12 +18,18 @@ class Episodes {
     func getEpisodes(from url: String, completion: @escaping () -> Void) {
         // В каждом файле есть ссылка на файл со следующей порцией эпизодов
         // Рекурсия до тех пор, пока не дойдём до последнего файла
-        if url == "" { completion() }
-        
-        JSONParser.shared.parseJSON(from: url, to: EpisodesData.self) { (data, info) in
-            if let jsonData = data as? EpisodesData, let jsonEpisodes = jsonData.results {
-                self.list += jsonEpisodes
-                self.getEpisodes(from: jsonData.info?.next ?? "", completion: completion)
+        if url == "" { completion() } else {
+            //        JSONParser.shared.parseJSON(from: url, to: EpisodesData.self) { data in
+            //            if let jsonData = data as? EpisodesData, let jsonEpisodes = jsonData.results {
+            //                self.list += jsonEpisodes
+            //                self.getEpisodes(from: jsonData.info?.next ?? "", completion: completion)
+            //            }
+            //        }
+            JSONParser.shared.parseJSONwithAlamofire(from: url, to: EpisodesData.self) { data in
+                if let jsonData = data as? EpisodesData, let jsonEpisodes = jsonData.results {
+                    self.list += jsonEpisodes
+                    self.getEpisodes(from: jsonData.info?.next ?? "", completion: completion)
+                }
             }
         }
     }
