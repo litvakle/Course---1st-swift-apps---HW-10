@@ -23,20 +23,19 @@ class Episodes {
         }
     }
     
-    func getEpisodes(from url: String, completion: @escaping () -> Void) {
-        // В каждом файле есть ссылка на файл со следующей порцией эпизодов
-        // Рекурсия до тех пор, пока не дойдём до последнего файла
-        if url == "" { completion() } else {
-            //        JSONParser.shared.parseJSON(from: url, to: EpisodesData.self) { data in
-            //            if let jsonData = data as? EpisodesData, let jsonEpisodes = jsonData.results {
-            //                self.list += jsonEpisodes
-            //                self.getEpisodes(from: jsonData.info?.next ?? "", completion: completion)
-            //            }
-            //        }
+    func getEpisodes(from url: String, clearList: Bool = true, completion: @escaping () -> Void) {
+        if clearList { list.removeAll() }
+        
+        if url == "" {
+            DataManager.shared.saveEpisodesToUserDefaults(episodes: list)
+            completion()
+        } else {
             JSONParser.shared.parseJSONwithAlamofire(from: url, to: EpisodesData.self) { data in
                 if let jsonData = data as? EpisodesData, let jsonEpisodes = jsonData.results {
                     self.list += jsonEpisodes
-                    self.getEpisodes(from: jsonData.info?.next ?? "", completion: completion)
+                    self.getEpisodes(from: jsonData.info?.next ?? "",
+                                     clearList: false,
+                                     completion: completion)
                 }
             }
         }

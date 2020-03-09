@@ -114,12 +114,18 @@
                                                         <state key="normal" title="Clear">
                                                             <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="clearButtonPressed:" destination="tgy-X5-eEL" eventType="touchUpInside" id="Xe8-IS-FjV"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKR-32-aZC">
                                                         <rect key="frame" x="66" y="0.0" width="34" height="30"/>
                                                         <state key="normal" title="Load">
                                                             <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="loadButtonPressed:" destination="tgy-X5-eEL" eventType="touchUpInside" id="c97-wT-8QJ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -137,17 +143,23 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="HT9-Mn-O0n">
                                                 <rect key="frame" x="274" y="0.0" width="100" height="30"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Krr-nN-Isv">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Krr-nN-Isv">
                                                         <rect key="frame" x="0.0" y="0.0" width="36" height="30"/>
                                                         <state key="normal" title="Clear">
                                                             <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="clearButtonPressed:" destination="tgy-X5-eEL" eventType="touchUpInside" id="zbR-lF-XWs"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obU-nz-3l1">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obU-nz-3l1">
                                                         <rect key="frame" x="66" y="0.0" width="34" height="30"/>
                                                         <state key="normal" title="Load">
                                                             <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="loadButtonPressed:" destination="tgy-X5-eEL" eventType="touchUpInside" id="3nx-T3-uC8"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -165,17 +177,23 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Pcj-ls-g5A">
                                                 <rect key="frame" x="274" y="0.0" width="100" height="30"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Pd-Xp-sIM">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Pd-Xp-sIM">
                                                         <rect key="frame" x="0.0" y="0.0" width="36" height="30"/>
                                                         <state key="normal" title="Clear">
                                                             <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="clearButtonPressed:" destination="tgy-X5-eEL" eventType="touchUpInside" id="sfi-vB-ERq"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQj-0X-Q9W">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQj-0X-Q9W">
                                                         <rect key="frame" x="66" y="0.0" width="34" height="30"/>
                                                         <state key="normal" title="Load">
                                                             <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="loadButtonPressed:" destination="tgy-X5-eEL" eventType="touchUpInside" id="ScZ-tR-FKV"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -183,16 +201,28 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="RKz-GC-miY">
+                                <rect key="frame" x="188.66666666666666" y="429.66666666666669" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="RKz-GC-miY" firstAttribute="centerX" secondItem="gBa-2U-evr" secondAttribute="centerX" id="7f7-HX-cPb"/>
                             <constraint firstItem="6xn-F0-afi" firstAttribute="trailing" secondItem="n6W-n7-jjy" secondAttribute="trailing" constant="20" id="Ee2-nU-ina"/>
+                            <constraint firstItem="RKz-GC-miY" firstAttribute="centerY" secondItem="gBa-2U-evr" secondAttribute="centerY" id="Nni-Ca-9RL"/>
                             <constraint firstItem="n6W-n7-jjy" firstAttribute="top" secondItem="6xn-F0-afi" secondAttribute="top" constant="20" id="oy0-uw-hun"/>
                             <constraint firstItem="n6W-n7-jjy" firstAttribute="leading" secondItem="6xn-F0-afi" secondAttribute="leading" constant="20" id="yg8-Bh-qiP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6xn-F0-afi"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="uHk-cn-CD8"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="RKz-GC-miY" id="Ltv-LO-lVc"/>
+                        <outlet property="charactersLabel" destination="Ipg-we-VhS" id="SSM-TY-Egt"/>
+                        <outlet property="episodesLabel" destination="chj-lP-TLf" id="Pcc-Fk-SJC"/>
+                        <outlet property="imagesLabel" destination="3z3-hZ-E5O" id="cE2-Ao-4KK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="He2-96-xTa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -17,7 +17,6 @@ class ImageView: UIImageView {
         
         weak var oldTask = currentTask
         currentTask = nil
-        oldTask?.cancel()
         
         guard let url = URL(string: urlString) else { return }
 
@@ -25,8 +24,11 @@ class ImageView: UIImageView {
         if let cachedImage = getImageFromUserDefaults(url: urlString) {
             image = cachedImage
             completion()
+            return
         }
 
+        oldTask?.cancel()
+        
         let session = URLSession.shared
         let dataTask = session.dataTask(with: url) { (data, response, error) in
             if let error = error { print(error); return }

@@ -19,20 +19,19 @@ class Characters {
         }
     }
     
-    func getCharacters(from url: String, completion: @escaping () -> Void) {
-        // В каждом файле есть ссылка на файл со следующей порцией персонажей
-        // Рекурсия до тех пор, пока не дойдём до последнего файла
-        if url == "" { completion() } else {
-            //        JSONParser.shared.parseJSON(from: url, to: CharactersData.self) { data in
-            //            if let jsonData = data as? CharactersData, let jsonCharacters = jsonData.results {
-            //                self.list += jsonCharacters
-            //                self.getCharacters(from: jsonData.info?.next ?? "", completion: completion)
-            //            }
-            //        }
+    func getCharacters(from url: String, clearList: Bool = true, completion: @escaping () -> Void) {
+        if clearList { list.removeAll() }
+
+        if url == "" {
+            DataManager.shared.saveCharactersToUserDefaults(characters: list)
+            completion()
+        } else {
             JSONParser.shared.parseJSONwithAlamofire(from: url, to: CharactersData.self) { data in
                 if let jsonData = data as? CharactersData, let jsonCharacters = jsonData.results {
                     self.list += jsonCharacters
-                    self.getCharacters(from: jsonData.info?.next ?? "", completion: completion)
+                    self.getCharacters(from: jsonData.info?.next ?? "",
+                                       clearList: false,
+                                       completion: completion)
                 }
             }
         }

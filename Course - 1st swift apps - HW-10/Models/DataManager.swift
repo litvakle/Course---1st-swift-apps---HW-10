@@ -26,9 +26,7 @@ class DataManager {
             Episodes.shared.getEpisodesInfo(from: DataURL.shared.episodes) { episodesCount in
                 if charactersCount != characters.count || episodesCount != episodes.count {
                     Characters.shared.getCharacters(from: DataURL.shared.characters) {
-                        self.saveCharactersToUserDefaults(characters: Characters.shared.list)
                         Episodes.shared.getEpisodes(from: DataURL.shared.episodes) {
-                            self.saveEpisodesToUserDefaults(episodes: Episodes.shared.list)
                             completion()
                         }
                     }
@@ -55,6 +53,10 @@ class DataManager {
         }
     }
     
+    func clearCharactersInUserDefaults() {
+        userDefaults.removeObject(forKey: charactersKey)
+    }
+    
     // MARK: - Character images
     func getCharacterImagesFromUserDefaults() -> [String: Data?] {
         if let images = userDefaults.value(forKey: characterImagesKey) as? [String: Data?] {
@@ -70,6 +72,25 @@ class DataManager {
         userDefaults.set(imagesData, forKey: characterImagesKey)
     }
     
+    func clearImagesInUserDefaults() {
+        userDefaults.removeObject(forKey: characterImagesKey)
+    }
+    
+    func getFirstUnsavedCharacterImage() -> RMCharacter? {
+        let images = DataManager.shared.getCharacterImagesFromUserDefaults()
+        var character: RMCharacter? = nil
+        
+        for currentCharacter in DataManager.shared.getCharactersFromUserDefaults() {
+            let urlString = currentCharacter.image ?? ""
+            if images[urlString] == nil {
+                character = currentCharacter
+                break
+            }
+        }
+        
+        return character
+    }
+    
     // MARK: - Episodes
     func getEpisodesFromUserDefaults() -> [Episode] {
         guard let data = userDefaults.value(forKey: episodesKey) as? Data else { return [] }
@@ -82,5 +103,9 @@ class DataManager {
         if let data = try? JSONEncoder().encode(episodes) {
             userDefaults.set(data, forKey: episodesKey)
         }
+    }
+    
+    func clearEpisodesInUserDefaults() {
+        userDefaults.removeObject(forKey: episodesKey)
     }
 }
