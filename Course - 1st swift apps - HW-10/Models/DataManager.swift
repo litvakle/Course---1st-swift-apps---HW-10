@@ -56,16 +56,18 @@ class DataManager {
     }
     
     // MARK: - Character images
-    func getCharacterImagesFromUserDefaults() -> [Int: UIImage?] {
-        if let images = userDefaults.value(forKey: characterImagesKey) as? [Int: UIImage?] {
+    func getCharacterImagesFromUserDefaults() -> [String: Data?] {
+        if let images = userDefaults.value(forKey: characterImagesKey) as? [String: Data?] {
             return images
         }
         
         return [:]
     }
     
-    func saveCharacterImageToUserDefaults(id: Int, image :UIImage?) {
-        userDefaults.set([id: image], forKey: characterImagesKey)
+    func saveCharacterImageToUserDefaults(url: String, image: UIImage?) {
+        guard var imagesData = getCharacterImagesFromUserDefaults() as? [String: Data] else { return }
+        imagesData[url] = image?.pngData()
+        userDefaults.set(imagesData, forKey: characterImagesKey)
     }
     
     // MARK: - Episodes

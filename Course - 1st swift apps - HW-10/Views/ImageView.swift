@@ -12,16 +12,17 @@ class ImageView: UIImageView {
 
     var currentTask: URLSessionTask?
     
-    func getImage(from url: String, completion: @escaping () -> Void) {
+    func getImage(from urlString: String, completion: @escaping () -> Void) {
         image = nil
         
         weak var oldTask = currentTask
         currentTask = nil
         oldTask?.cancel()
         
-        guard let url = URL(string: url) else { return }
+        guard let url = URL(string: urlString) else { return }
 
-        if let cachedImage = getImageFromCache(url: url) {
+//        if let cachedImage = getImageFromCache(url: url) {
+        if let cachedImage = getImageFromUserDefaults(url: urlString) {
             image = cachedImage
             completion()
         }
@@ -35,7 +36,8 @@ class ImageView: UIImageView {
             
             DispatchQueue.main.async {
                 self.image = UIImage(data: data)
-                self.saveImageToCache(data: data, response: response)
+                //self.saveImageToCache(data: data, response: response)
+                DataManager.shared.saveCharacterImageToUserDefaults(url: urlString, image: self.image)
                 completion()
             }
         }
@@ -58,5 +60,12 @@ class ImageView: UIImageView {
         guard let responseURL = response.url else { return }
         let cachedResponse = CachedURLResponse(response: response, data: data)
         URLCache.shared.storeCachedResponse(cachedResponse, for: URLRequest(url: responseURL))
+    }
+    
+    func getImageFromUserDefaults(url: String) -> UIImage? {
+        guard let imagesData = DataManager.shared.getCharacterImagesFromUserDefaults() as? [String: Data] else { return nil }
+        guard let imageData = imagesData[url] else { return nil }
+        
+        return UIImage(data: imageData)
     }
 }
