@@ -15,6 +15,14 @@ class Episodes {
         return list.filter { $0.url == url }.first
     }
     
+    func getEpisodesInfo(from url: String, completion: @escaping (Int) -> Void) {
+        JSONParser.shared.parseJSONwithAlamofire(from: url, to: EpisodesData.self) { data in
+            if let jsonData = data as? EpisodesData {
+                completion(jsonData.info?.count ?? 0)
+            }
+        }
+    }
+    
     func getEpisodes(from url: String, completion: @escaping () -> Void) {
         // В каждом файле есть ссылка на файл со следующей порцией эпизодов
         // Рекурсия до тех пор, пока не дойдём до последнего файла
@@ -36,18 +44,19 @@ class Episodes {
 }
 
 // MARK: - JSON Struct
-struct EpisodesData: Decodable {
+struct EpisodesData: Codable {
     let results: [Episode]?
     let info: EpisodesInfo?
 }
 
-struct Episode: Decodable {
+struct Episode: Codable {
     let name: String?
     let air_date: String?
     let episode: String?
     let url: String?
 }
 
-struct EpisodesInfo: Decodable {
+struct EpisodesInfo: Codable {
     let next: String?
+    let count: Int?
 }

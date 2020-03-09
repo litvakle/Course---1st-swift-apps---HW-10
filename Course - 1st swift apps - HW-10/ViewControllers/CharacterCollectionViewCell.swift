@@ -19,7 +19,8 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     // MARK: - Public metrhods
     func configure(with character: RMCharacter) {
         characterView.layer.cornerRadius = 10
-
+        characterLabel.text = character.name
+        
         hideCell()
         characterImageView.getImage(from: character.image ?? "") { 
             self.showCell(character: character)
@@ -29,15 +30,11 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     // MARK: - Private methods
     func hideCell() {
         characterImageView.isHidden = true
-        characterLabel.isHidden = true
         activityIndicator.startAnimating()
     }
     
     func showCell(character: RMCharacter) {
-        characterLabel.text = character.name
-        
         self.activityIndicator.stopAnimating()
         self.characterImageView.isHidden = false
-        self.characterLabel.isHidden = false
     }
 }

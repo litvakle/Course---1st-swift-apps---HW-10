@@ -36,5 +36,117 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0AF76D7F-0F65-443D-A792-3AFE30A36E58"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Course - 1st swift apps - HW-10/Models/DataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "loadData(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0AF76D7F-0F65-443D-A792-3AFE30A36E58 - a0a7f58b0c7869e4"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; () in Course___1st_swift_apps___HW_10.DataManager.loadData(completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "Course - 1st swift apps - HW-10"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/litvakle/developer/Course%20-%201st%20swift%20apps/HW%2010-01/Course%20-%201st%20swift%20apps%20-%20HW-10/Course%20-%201st%20swift%20apps%20-%20HW-10/Models/DataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "61">
+               </Location>
+               <Location
+                  uuid = "0AF76D7F-0F65-443D-A792-3AFE30A36E58 - 1ca5ecabd07fd933"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; () in closure #1 (Swift.Int) -&gt; () in Course___1st_swift_apps___HW_10.DataManager.loadData(completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "Course - 1st swift apps - HW-10"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/litvakle/developer/Course%20-%201st%20swift%20apps/HW%2010-01/Course%20-%201st%20swift%20apps%20-%20HW-10/Course%20-%201st%20swift%20apps%20-%20HW-10/Models/DataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "163">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ACE2663D-0E6D-4058-AF6A-5F19890E042A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Course - 1st swift apps - HW-10/Models/DataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "loadData(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4FC4EBEF-BE77-415F-87E1-9643CC909AD5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Course - 1st swift apps - HW-10/Models/DataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "loadData(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0D39DF5-B892-42AA-ACAF-DCAA38180242"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Course - 1st swift apps - HW-10/Models/DataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "getCharactersFromUserDefaults()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BA04634F-56E1-476A-A099-140E002CE089"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Course - 1st swift apps - HW-10/Models/DataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "saveCharactersToUserDefaults(characters:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

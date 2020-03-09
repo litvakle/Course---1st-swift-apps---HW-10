@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		110870D414115242D9B76FFE /* Pods_Course___1st_swift_apps___HW_10.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B879BA814CAF1BC844C7451 /* Pods_Course___1st_swift_apps___HW_10.framework */; };
 		3A0A7BAD2413F906007E39E4 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A7BAC2413F906007E39E4 /* ImageView.swift */; };
+		3A0A7BB1241617AA007E39E4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A7BB0241617AA007E39E4 /* DataManager.swift */; };
 		3A83F486240AC97E0012B642 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83F485240AC97E0012B642 /* CharacterViewController.swift */; };
 		3A83F488240BCE110012B642 /* EpisodesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83F487240BCE110012B642 /* EpisodesTableViewController.swift */; };
 		3A8B0667240A4D3300CF0849 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B0666240A4D3300CF0849 /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 		0B879BA814CAF1BC844C7451 /* Pods_Course___1st_swift_apps___HW_10.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Course___1st_swift_apps___HW_10.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AE89010040B294621341ABE /* Pods-Course - 1st swift apps - HW-10.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Course - 1st swift apps - HW-10.debug.xcconfig"; path = "Target Support Files/Pods-Course - 1st swift apps - HW-10/Pods-Course - 1st swift apps - HW-10.debug.xcconfig"; sourceTree = "<group>"; };
 		3A0A7BAC2413F906007E39E4 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		3A0A7BB0241617AA007E39E4 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3A83F485240AC97E0012B642 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		3A83F487240BCE110012B642 /* EpisodesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTableViewController.swift; sourceTree = "<group>"; };
 		3A8B0663240A4D3300CF0849 /* Course - 1st swift apps - HW-10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Course - 1st swift apps - HW-10.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +102,7 @@
 				3AEBB1A9240BE6CB00447550 /* Episodes.swift */,
 				3AEBB1AB240BE73D00447550 /* DataURL.swift */,
 				3A8B0687240A5EC700CF0849 /* JSONParser.swift */,
+				3A0A7BB0241617AA007E39E4 /* DataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				3A8B0686240A5BF500CF0849 /* CharacterCollectionViewCell.swift in Sources */,
 				3AEBB1AA240BE6CB00447550 /* Episodes.swift in Sources */,
 				3A8B0671240A4D3300CF0849 /* Course___1st_swift_apps___HW_10.xcdatamodeld in Sources */,
+				3A0A7BB1241617AA007E39E4 /* DataManager.swift in Sources */,
 				3A8B0667240A4D3300CF0849 /* AppDelegate.swift in Sources */,
 				3A8B0688240A5EC700CF0849 /* JSONParser.swift in Sources */,
 				3A83F486240AC97E0012B642 /* CharacterViewController.swift in Sources */,

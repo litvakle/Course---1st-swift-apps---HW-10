@@ -11,6 +11,14 @@ class Characters {
     
     var list = [RMCharacter]()
     
+    func getCharactersInfo(from url: String, completion: @escaping (Int) -> Void) {
+        JSONParser.shared.parseJSONwithAlamofire(from: url, to: CharactersData.self) { data in
+            if let jsonData = data as? CharactersData {
+                completion(jsonData.info?.count ?? 0)
+            }
+        }
+    }
+    
     func getCharacters(from url: String, completion: @escaping () -> Void) {
         // В каждом файле есть ссылка на файл со следующей порцией персонажей
         // Рекурсия до тех пор, пока не дойдём до последнего файла
@@ -32,12 +40,12 @@ class Characters {
 }
 
 // MARK: - JSON Struct
-struct CharactersData: Decodable {
-    var info: Info? = nil
-    var results: [RMCharacter]? = nil
+struct CharactersData: Codable {
+    let info: Info?
+    let results: [RMCharacter]?
 }
 
-struct RMCharacter: Decodable { // добавил "RM", чтобы не совпало с название предопределённого типа Character
+struct RMCharacter: Codable { // добавил "RM", чтобы не совпало с название предопределённого типа Character
     let id: Int
     let species: String?
     let origin: Origin?
@@ -59,14 +67,15 @@ struct RMCharacter: Decodable { // добавил "RM", чтобы не совп
     }
 }
 
-struct Origin: Decodable {
+struct Origin: Codable {
     let name: String?
 }
 
-struct Location: Decodable {
+struct Location: Codable {
     let name: String?
 }
 
-struct Info: Decodable {
+struct Info: Codable {
     let next: String?
+    let count: Int?
 }
