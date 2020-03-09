@@ -12,7 +12,7 @@ class CharacterCollectionViewCell: UICollectionViewCell {
 
     // MARK: - IB Outlets
     @IBOutlet weak var characterView: UIView!
-    @IBOutlet weak var characterImage: ImageView!
+    @IBOutlet weak var characterImageView: ImageView!
     @IBOutlet weak var characterLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
@@ -21,13 +21,14 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         characterView.layer.cornerRadius = 10
 
         hideCell()
-        characterImage.getImage(from: character.image ?? "")
-        showCell(character: character)
+        characterImageView.getImage(from: character.image ?? "") { 
+            self.showCell(character: character)
+        }
     }
     
     // MARK: - Private methods
     func hideCell() {
-        characterImage.isHidden = true
+        characterImageView.isHidden = true
         characterLabel.isHidden = true
         activityIndicator.startAnimating()
     }
@@ -36,7 +37,7 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         characterLabel.text = character.name
         
         self.activityIndicator.stopAnimating()
-        self.characterImage.isHidden = false
+        self.characterImageView.isHidden = false
         self.characterLabel.isHidden = false
     }
 }

@@ -12,7 +12,7 @@ class ImageView: UIImageView {
 
     var currentTask: URLSessionTask?
     
-    func getImage(from url: String) {
+    func getImage(from url: String, completion: @escaping () -> Void) {
         image = nil
         
         weak var oldTask = currentTask
@@ -23,7 +23,7 @@ class ImageView: UIImageView {
 
         if let cachedImage = getImageFromCache(url: url) {
             image = cachedImage
-            return
+            completion()
         }
 
         let session = URLSession.shared
@@ -36,6 +36,7 @@ class ImageView: UIImageView {
             DispatchQueue.main.async {
                 self.image = UIImage(data: data)
                 self.saveImageToCache(data: data, response: response)
+                completion()
             }
         }
         
