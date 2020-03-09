@@ -12,31 +12,17 @@ class CharacterCollectionViewCell: UICollectionViewCell {
 
     // MARK: - IB Outlets
     @IBOutlet weak var characterView: UIView!
-    @IBOutlet weak var characterImage: UIImageView!
+    @IBOutlet weak var characterImage: ImageView!
     @IBOutlet weak var characterLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     // MARK: - Public metrhods
     func configure(with character: RMCharacter) {
         characterView.layer.cornerRadius = 10
-        
+
         hideCell()
-        
-        let index = character.id
-        if let image = Images.shared.images[index] {
-            showCell(character, image)
-        } else {
-            DispatchQueue.global().async {
-                guard let imageData = Images.shared.getImageData(from: character.image) else { return }
-                
-                DispatchQueue.main.async {
-                    if let image = UIImage(data: imageData) {
-                        self.showCell(character, image)
-                        Images.shared.images[index] = image
-                    }
-                }
-            }
-        }
+        characterImage.getImage(from: character.image ?? "")
+        showCell(character: character)
     }
     
     // MARK: - Private methods
@@ -46,9 +32,8 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         activityIndicator.startAnimating()
     }
     
-    func showCell(_ character: RMCharacter, _ image: UIImage) {
-        self.characterImage.image = image
-        self.characterLabel.text = character.name
+    func showCell(character: RMCharacter) {
+        characterLabel.text = character.name
         
         self.activityIndicator.stopAnimating()
         self.characterImage.isHidden = false

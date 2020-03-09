@@ -12,7 +12,7 @@ class CharacterViewController: UIViewController {
     
     // MARK: - IB Outlets
     @IBOutlet weak var characterNameLabel: UILabel!
-    @IBOutlet weak var characterImageView: UIImageView!
+    @IBOutlet weak var characterImageView: ImageView!
     @IBOutlet weak var characterInfoLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -34,21 +34,25 @@ class CharacterViewController: UIViewController {
         characterNameLabel.text = character.name
         characterInfoLabel.text = character.description
         
-        if let image = Images.shared.images[character.id] {
-            self.activityIndicator.stopAnimating()
-            characterImageView.image = image
-        } else {
-            DispatchQueue.global().async {
-                guard let imageData = Images.shared.getImageData(from: self.character.image) else { return }
-                
-                DispatchQueue.main.async {
-                    if let image = UIImage(data: imageData) {
-                        self.activityIndicator.stopAnimating()
-                        self.characterImageView.image = image
-                    }
-                }
-            }
-        }
+        characterImageView.getImage(from: character.image ?? "")
+        
+        activityIndicator.stopAnimating()
+        
+//        if let image = Images.shared.images[character.id] {
+//            self.activityIndicator.stopAnimating()
+//            characterImageView.image = image
+//        } else {
+//            DispatchQueue.global().async {
+//                guard let imageData = Images.shared.getImageData(from: self.character.image) else { return }
+//
+//                DispatchQueue.main.async {
+//                    if let image = UIImage(data: imageData) {
+//                        self.activityIndicator.stopAnimating()
+//                        self.characterImageView.image = image
+//                    }
+//                }
+//            }
+//        }
     }
     
     // MARK: - Navigation
