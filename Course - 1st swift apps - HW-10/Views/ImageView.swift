@@ -21,7 +21,7 @@ class ImageView: UIImageView {
         guard let url = URL(string: urlString) else { return }
 
 //        if let cachedImage = getImageFromCache(url: url) {
-        if let cachedImage = getImageFromUserDefaults(url: urlString) {
+        if let cachedImage = getImageFromStorage(url: urlString) {
             image = cachedImage
             completion()
             return
@@ -64,7 +64,7 @@ class ImageView: UIImageView {
         URLCache.shared.storeCachedResponse(cachedResponse, for: URLRequest(url: responseURL))
     }
     
-    func getImageFromUserDefaults(url: String) -> UIImage? {
+    func getImageFromStorage(url: String) -> UIImage? {
         guard let imagesData = DataManager.shared.manager.getCharacterImages() as? [String: Data] else { return nil }
         guard let imageData = imagesData[url] else { return nil }
         

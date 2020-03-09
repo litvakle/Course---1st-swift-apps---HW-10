@@ -90,6 +90,40 @@
 			path = DataManagers;
 			sourceTree = "<group>";
 		};
+		3A0A7BC2241695A5007E39E4 /* Rick and Mortie */ = {
+			isa = PBXGroup;
+			children = (
+				3A8B067D240A4D5900CF0849 /* Characters.swift */,
+				3AEBB1A9240BE6CB00447550 /* Episodes.swift */,
+			);
+			path = "Rick and Mortie";
+			sourceTree = "<group>";
+		};
+		3A0A7BC3241695B5007E39E4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3A8B0687240A5EC700CF0849 /* JSONParser.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3A0A7BC4241695C5007E39E4 /* DataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				3AEBB1AB240BE73D00447550 /* DataURL.swift */,
+			);
+			path = DataStorage;
+			sourceTree = "<group>";
+		};
+		3A0A7BC5241695D6007E39E4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3A8B066C240A4D3300CF0849 /* Main.storyboard */,
+				3A8B0674240A4D3400CF0849 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		3A8B065A240A4D3300CF0849 = {
 			isa = PBXGroup;
 			children = (
@@ -125,10 +159,9 @@
 		3A8B067F240A569D00CF0849 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3A8B067D240A4D5900CF0849 /* Characters.swift */,
-				3AEBB1A9240BE6CB00447550 /* Episodes.swift */,
-				3AEBB1AB240BE73D00447550 /* DataURL.swift */,
-				3A8B0687240A5EC700CF0849 /* JSONParser.swift */,
+				3A0A7BC4241695C5007E39E4 /* DataStorage */,
+				3A0A7BC2241695A5007E39E4 /* Rick and Mortie */,
+				3A0A7BC3241695B5007E39E4 /* Network */,
 				3A0A7BBF24168ED5007E39E4 /* DataManagers */,
 			);
 			path = Models;
@@ -137,9 +170,8 @@
 		3A8B0680240A56A500CF0849 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3A8B066C240A4D3300CF0849 /* Main.storyboard */,
 				3A0A7BAC2413F906007E39E4 /* ImageView.swift */,
-				3A8B0674240A4D3400CF0849 /* LaunchScreen.storyboard */,
+				3A0A7BC5241695D6007E39E4 /* Storyboards */,
 			);
 			path = Views;
 			sourceTree = "<group>";
