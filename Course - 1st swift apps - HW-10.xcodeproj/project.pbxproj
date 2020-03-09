@@ -14,6 +14,7 @@
 		3A0A7BB5241681D8007E39E4 /* DataManagerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A7BB4241681D8007E39E4 /* DataManagerable.swift */; };
 		3A0A7BBD24168DC1007E39E4 /* UserDefaultsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A7BBC24168DC1007E39E4 /* UserDefaultsDataManager.swift */; };
 		3A0A7BC124168F21007E39E4 /* PlistFileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A7BC024168F21007E39E4 /* PlistFileDataManager.swift */; };
+		3A0A7BC724169CBB007E39E4 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A7BC624169CBB007E39E4 /* ImageManager.swift */; };
 		3A83F486240AC97E0012B642 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83F485240AC97E0012B642 /* CharacterViewController.swift */; };
 		3A83F488240BCE110012B642 /* EpisodesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83F487240BCE110012B642 /* EpisodesTableViewController.swift */; };
 		3A8B0667240A4D3300CF0849 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B0666240A4D3300CF0849 /* AppDelegate.swift */; };
@@ -40,6 +41,7 @@
 		3A0A7BB4241681D8007E39E4 /* DataManagerable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerable.swift; sourceTree = "<group>"; };
 		3A0A7BBC24168DC1007E39E4 /* UserDefaultsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataManager.swift; sourceTree = "<group>"; };
 		3A0A7BC024168F21007E39E4 /* PlistFileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistFileDataManager.swift; sourceTree = "<group>"; };
+		3A0A7BC624169CBB007E39E4 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		3A83F485240AC97E0012B642 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		3A83F487240BCE110012B642 /* EpisodesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTableViewController.swift; sourceTree = "<group>"; };
 		3A8B0663240A4D3300CF0849 /* Course - 1st swift apps - HW-10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Course - 1st swift apps - HW-10.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,25 +88,26 @@
 				3A0A7BB0241617AA007E39E4 /* DataManager.swift */,
 				3A0A7BBC24168DC1007E39E4 /* UserDefaultsDataManager.swift */,
 				3A0A7BC024168F21007E39E4 /* PlistFileDataManager.swift */,
+				3A0A7BC624169CBB007E39E4 /* ImageManager.swift */,
 			);
 			path = DataManagers;
 			sourceTree = "<group>";
 		};
-		3A0A7BC2241695A5007E39E4 /* Rick and Mortie */ = {
+		3A0A7BC2241695A5007E39E4 /* Rick and Morty */ = {
 			isa = PBXGroup;
 			children = (
 				3A8B067D240A4D5900CF0849 /* Characters.swift */,
 				3AEBB1A9240BE6CB00447550 /* Episodes.swift */,
 			);
-			path = "Rick and Mortie";
+			path = "Rick and Morty";
 			sourceTree = "<group>";
 		};
-		3A0A7BC3241695B5007E39E4 /* Network */ = {
+		3A0A7BC3241695B5007E39E4 /* NetworkManagers */ = {
 			isa = PBXGroup;
 			children = (
 				3A8B0687240A5EC700CF0849 /* JSONParser.swift */,
 			);
-			path = Network;
+			path = NetworkManagers;
 			sourceTree = "<group>";
 		};
 		3A0A7BC4241695C5007E39E4 /* DataStorage */ = {
@@ -160,8 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				3A0A7BC4241695C5007E39E4 /* DataStorage */,
-				3A0A7BC2241695A5007E39E4 /* Rick and Mortie */,
-				3A0A7BC3241695B5007E39E4 /* Network */,
+				3A0A7BC2241695A5007E39E4 /* Rick and Morty */,
+				3A0A7BC3241695B5007E39E4 /* NetworkManagers */,
 				3A0A7BBF24168ED5007E39E4 /* DataManagers */,
 			);
 			path = Models;
@@ -333,6 +336,7 @@
 			files = (
 				3A8B0686240A5BF500CF0849 /* CharacterCollectionViewCell.swift in Sources */,
 				3AEBB1AA240BE6CB00447550 /* Episodes.swift in Sources */,
+				3A0A7BC724169CBB007E39E4 /* ImageManager.swift in Sources */,
 				3A8B0671240A4D3300CF0849 /* Course___1st_swift_apps___HW_10.xcdatamodeld in Sources */,
 				3A0A7BB1241617AA007E39E4 /* DataManager.swift in Sources */,
 				3A8B0667240A4D3300CF0849 /* AppDelegate.swift in Sources */,

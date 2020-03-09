@@ -19,12 +19,12 @@ class DataManager {
     let manager: DataManagerable
     
     init() {
-//        manager = UserDefaultsDataManager(charactersKey: charactersKey,
-//                                          episodesKey: episodesKey,
-//                                          characterImagesKey: characterImagesKey)
-        manager = PlistFileDataManager(charactersKey: charactersKey,
-                                       episodesKey: episodesKey,
-                                       characterImagesKey: characterImagesKey)
+        manager = UserDefaultsDataManager(charactersKey: charactersKey,
+                                          episodesKey: episodesKey,
+                                          characterImagesKey: characterImagesKey)
+//        manager = PlistFileDataManager(charactersKey: charactersKey,
+//                                       episodesKey: episodesKey,
+//                                       characterImagesKey: characterImagesKey)
     }
 
     func loadData(completion: @escaping () -> Void) {

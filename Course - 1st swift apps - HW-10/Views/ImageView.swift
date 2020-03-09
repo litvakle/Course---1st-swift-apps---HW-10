@@ -20,8 +20,8 @@ class ImageView: UIImageView {
         
         guard let url = URL(string: urlString) else { return }
 
-//        if let cachedImage = getImageFromCache(url: url) {
-        if let cachedImage = getImageFromStorage(url: urlString) {
+//        if let cachedImage = ImageManager.shared.getImageFromCache(url: url) {
+        if let cachedImage = ImageManager.shared.getImageFromStorage(url: urlString) {
             image = cachedImage
             completion()
             return
@@ -46,28 +46,5 @@ class ImageView: UIImageView {
         
         currentTask = dataTask
         currentTask?.resume()
-    }
-
-    func getImageFromCache(url: URL) -> UIImage? {
-        guard let cachedResponse = URLCache.shared.cachedResponse(for: URLRequest(url: url)) else {
-            return nil
-        }
-
-        let image = UIImage(data: cachedResponse.data)
-
-        return image
-    }
-
-    func saveImageToCache(data: Data, response: URLResponse) {
-        guard let responseURL = response.url else { return }
-        let cachedResponse = CachedURLResponse(response: response, data: data)
-        URLCache.shared.storeCachedResponse(cachedResponse, for: URLRequest(url: responseURL))
-    }
-    
-    func getImageFromStorage(url: String) -> UIImage? {
-        guard let imagesData = DataManager.shared.manager.getCharacterImages() as? [String: Data] else { return nil }
-        guard let imageData = imagesData[url] else { return nil }
-        
-        return UIImage(data: imageData)
     }
 }
