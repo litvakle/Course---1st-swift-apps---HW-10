@@ -26,9 +26,9 @@ class SettingsViewController: UIViewController {
     
     // MARK: - Private methods
     private func updateView() {
-        let charactersCount = DataManager.shared.getCharactersFromUserDefaults().count
-        let episodesCount = DataManager.shared.getEpisodesFromUserDefaults().count
-        let imagesCount = DataManager.shared.getCharacterImagesFromUserDefaults().count
+        let charactersCount = DataManager.shared.manager.getCharacters().count
+        let episodesCount = DataManager.shared.manager.getEpisodes().count
+        let imagesCount = DataManager.shared.manager.getCharacterImages().count
         
         charactersLabel.text = "Characters saved: \(charactersCount)"
         episodesLabel.text = "Episodes saved: \(episodesCount)"
@@ -51,9 +51,9 @@ class SettingsViewController: UIViewController {
     // MARK: - IB Actions
     @IBAction func clearButtonPressed(_ sender: UIButton) {
         switch sender.tag {
-        case 0: DataManager.shared.clearCharactersInUserDefaults()
-        case 1: DataManager.shared.clearEpisodesInUserDefaults()
-        case 2: DataManager.shared.clearImagesInUserDefaults()
+        case 0: DataManager.shared.manager.clearCharacters()
+        case 1: DataManager.shared.manager.clearEpisodes()
+        case 2: DataManager.shared.manager.clearImages()
         default: break
         }
         
@@ -83,18 +83,17 @@ class SettingsViewController: UIViewController {
 }
 
 // MARK: - Extension + SettingsViewController
-
 extension SettingsViewController {
     private func saveAllCharacterImagesToUserDefaults(completion: @escaping () -> Void) {
         guard let character = DataManager.shared.getFirstUnsavedCharacterImage() else { completion(); return }
         
         let urlString = character.image ?? ""
-        
         guard let url = URL(string: urlString) else { return }
+
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             if let imageData = data {
                 if let image = UIImage(data: imageData) {
-                    DataManager.shared.saveCharacterImageToUserDefaults(url: urlString, image: image)
+                    DataManager.shared.manager.saveCharacterImage(url: urlString, image: image)
                     DispatchQueue.main.async {
                         self.updateView()
                     }

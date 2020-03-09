@@ -23,7 +23,7 @@ class Characters {
         if clearList { list.removeAll() }
 
         if url == "" {
-            DataManager.shared.saveCharactersToUserDefaults(characters: list)
+            DataManager.shared.manager.saveCharacters(characters: list)
             completion()
         } else {
             JSONParser.shared.parseJSONwithAlamofire(from: url, to: CharactersData.self) { data in

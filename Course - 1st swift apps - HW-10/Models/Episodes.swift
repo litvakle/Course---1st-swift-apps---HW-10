@@ -27,7 +27,7 @@ class Episodes {
         if clearList { list.removeAll() }
         
         if url == "" {
-            DataManager.shared.saveEpisodesToUserDefaults(episodes: list)
+            DataManager.shared.manager.saveEpisodes(episodes: list)
             completion()
         } else {
             JSONParser.shared.parseJSONwithAlamofire(from: url, to: EpisodesData.self) { data in

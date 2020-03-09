@@ -39,7 +39,7 @@ class ImageView: UIImageView {
             DispatchQueue.main.async {
                 self.image = UIImage(data: data)
                 //self.saveImageToCache(data: data, response: response)
-                DataManager.shared.saveCharacterImageToUserDefaults(url: urlString, image: self.image)
+                DataManager.shared.manager.saveCharacterImage(url: urlString, image: self.image)
                 completion()
             }
         }
@@ -65,7 +65,7 @@ class ImageView: UIImageView {
     }
     
     func getImageFromUserDefaults(url: String) -> UIImage? {
-        guard let imagesData = DataManager.shared.getCharacterImagesFromUserDefaults() as? [String: Data] else { return nil }
+        guard let imagesData = DataManager.shared.manager.getCharacterImages() as? [String: Data] else { return nil }
         guard let imageData = imagesData[url] else { return nil }
         
         return UIImage(data: imageData)

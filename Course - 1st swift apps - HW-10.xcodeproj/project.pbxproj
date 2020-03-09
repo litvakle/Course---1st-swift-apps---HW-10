@@ -11,6 +11,9 @@
 		3A0A7BAD2413F906007E39E4 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A7BAC2413F906007E39E4 /* ImageView.swift */; };
 		3A0A7BB1241617AA007E39E4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A7BB0241617AA007E39E4 /* DataManager.swift */; };
 		3A0A7BB324164CCA007E39E4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A7BB224164CCA007E39E4 /* SettingsViewController.swift */; };
+		3A0A7BB5241681D8007E39E4 /* DataManagerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A7BB4241681D8007E39E4 /* DataManagerable.swift */; };
+		3A0A7BBD24168DC1007E39E4 /* UserDefaultsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A7BBC24168DC1007E39E4 /* UserDefaultsDataManager.swift */; };
+		3A0A7BC124168F21007E39E4 /* PlistFileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A7BC024168F21007E39E4 /* PlistFileDataManager.swift */; };
 		3A83F486240AC97E0012B642 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83F485240AC97E0012B642 /* CharacterViewController.swift */; };
 		3A83F488240BCE110012B642 /* EpisodesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83F487240BCE110012B642 /* EpisodesTableViewController.swift */; };
 		3A8B0667240A4D3300CF0849 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B0666240A4D3300CF0849 /* AppDelegate.swift */; };
@@ -34,6 +37,9 @@
 		3A0A7BAC2413F906007E39E4 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		3A0A7BB0241617AA007E39E4 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3A0A7BB224164CCA007E39E4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3A0A7BB4241681D8007E39E4 /* DataManagerable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerable.swift; sourceTree = "<group>"; };
+		3A0A7BBC24168DC1007E39E4 /* UserDefaultsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataManager.swift; sourceTree = "<group>"; };
+		3A0A7BC024168F21007E39E4 /* PlistFileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistFileDataManager.swift; sourceTree = "<group>"; };
 		3A83F485240AC97E0012B642 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		3A83F487240BCE110012B642 /* EpisodesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTableViewController.swift; sourceTree = "<group>"; };
 		3A8B0663240A4D3300CF0849 /* Course - 1st swift apps - HW-10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Course - 1st swift apps - HW-10.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +72,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A0A7BBE24168EBD007E39E4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3A0A7BB4241681D8007E39E4 /* DataManagerable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3A0A7BBF24168ED5007E39E4 /* DataManagers */ = {
+			isa = PBXGroup;
+			children = (
+				3A0A7BB0241617AA007E39E4 /* DataManager.swift */,
+				3A0A7BBC24168DC1007E39E4 /* UserDefaultsDataManager.swift */,
+				3A0A7BC024168F21007E39E4 /* PlistFileDataManager.swift */,
+			);
+			path = DataManagers;
+			sourceTree = "<group>";
+		};
 		3A8B065A240A4D3300CF0849 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +113,7 @@
 			children = (
 				3A8B0682240A56BA00CF0849 /* SupportingFiles */,
 				3A8B0681240A56B100CF0849 /* ViewControllers */,
+				3A0A7BBE24168EBD007E39E4 /* Protocols */,
 				3A8B067F240A569D00CF0849 /* Models */,
 				3A8B0680240A56A500CF0849 /* Views */,
 				3A8B0672240A4D3400CF0849 /* Assets.xcassets */,
@@ -104,7 +129,7 @@
 				3AEBB1A9240BE6CB00447550 /* Episodes.swift */,
 				3AEBB1AB240BE73D00447550 /* DataURL.swift */,
 				3A8B0687240A5EC700CF0849 /* JSONParser.swift */,
-				3A0A7BB0241617AA007E39E4 /* DataManager.swift */,
+				3A0A7BBF24168ED5007E39E4 /* DataManagers */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -280,9 +305,12 @@
 				3A0A7BB1241617AA007E39E4 /* DataManager.swift in Sources */,
 				3A8B0667240A4D3300CF0849 /* AppDelegate.swift in Sources */,
 				3A8B0688240A5EC700CF0849 /* JSONParser.swift in Sources */,
+				3A0A7BC124168F21007E39E4 /* PlistFileDataManager.swift in Sources */,
+				3A0A7BBD24168DC1007E39E4 /* UserDefaultsDataManager.swift in Sources */,
 				3A83F486240AC97E0012B642 /* CharacterViewController.swift in Sources */,
 				3AEBB1AC240BE73D00447550 /* DataURL.swift in Sources */,
 				3A0A7BB324164CCA007E39E4 /* SettingsViewController.swift in Sources */,
+				3A0A7BB5241681D8007E39E4 /* DataManagerable.swift in Sources */,
 				3A8B0669240A4D3300CF0849 /* SceneDelegate.swift in Sources */,
 				3A83F488240BCE110012B642 /* EpisodesTableViewController.swift in Sources */,
 				3A8B067E240A4D5900CF0849 /* Characters.swift in Sources */,
