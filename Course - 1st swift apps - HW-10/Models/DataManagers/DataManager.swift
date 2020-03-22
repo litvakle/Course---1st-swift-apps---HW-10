@@ -12,19 +12,12 @@ import UIKit
 class DataManager {
     static let shared = DataManager()
     
-    private let charactersKey = "Characters"
-    private let episodesKey = "Episodes"
-    private let characterImagesKey = "CharacterImages"
-    
     let manager: DataManagerable
     
     init() {
-        manager = UserDefaultsDataManager(charactersKey: charactersKey,
-                                          episodesKey: episodesKey,
-                                          characterImagesKey: characterImagesKey)
-//        manager = PlistFileDataManager(charactersKey: charactersKey,
-//                                       episodesKey: episodesKey,
-//                                       characterImagesKey: characterImagesKey)
+//        manager = UserDefaultsDataManager()
+        manager = PlistFileDataManager()
+//        manager = RealmDataManager()
     }
 
     func loadData(completion: @escaping () -> Void) {

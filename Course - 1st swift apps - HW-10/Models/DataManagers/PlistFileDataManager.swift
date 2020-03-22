@@ -11,9 +11,9 @@ import UIKit
 
 class PlistFileDataManager: DataManagerable {
     
-    var charactersKey: String
-    var episodesKey: String
-    var characterImagesKey: String
+    let charactersKey = DataManagerKeys.charactersKey.rawValue
+    var episodesKey = DataManagerKeys.episodesKey.rawValue
+    var characterImagesKey = DataManagerKeys.characterImagesKey.rawValue
     
     private let documentsDirectory =
         FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -21,11 +21,7 @@ class PlistFileDataManager: DataManagerable {
     private let episodesURL: URL!
     private let characterImagesURL: URL!
     
-    required init(charactersKey: String, episodesKey: String, characterImagesKey: String) {
-        self.charactersKey = charactersKey
-        self.episodesKey = episodesKey
-        self.characterImagesKey = characterImagesKey
-        
+    required init() {
         charactersURL = documentsDirectory.appendingPathComponent(charactersKey).appendingPathExtension("plist")
         episodesURL = documentsDirectory.appendingPathComponent(episodesKey).appendingPathExtension("plist")
         characterImagesURL = documentsDirectory.appendingPathComponent(characterImagesKey).appendingPathExtension("plist")
@@ -49,16 +45,17 @@ class PlistFileDataManager: DataManagerable {
     }
 
     // MARK: - Character images
-    func getCharacterImages() -> [String: Data?] {
+    func getCharacterImages() -> [String: Data] {
         guard let data = try? Data(contentsOf: characterImagesURL) else { return [:] }
-        guard let images = try? PropertyListDecoder().decode([String: Data?].self, from: data) else { return [:] }
+        guard let images = try? PropertyListDecoder().decode([String: Data].self, from: data) else { return [:] }
         
         return images
     }
     
     func saveCharacterImage(url: String, image: UIImage?) {
-        guard var imagesData = getCharacterImages() as? [String: Data] else { return }
-        imagesData[url] = image?.pngData()
+        var imagesData = getCharacterImages()
+        
+        imagesData[url] = image == nil ? nil : image?.pngData()
         
         guard let data = try? PropertyListEncoder().encode(imagesData) else { return }
         try? data.write(to: characterImagesURL, options: .noFileProtection)

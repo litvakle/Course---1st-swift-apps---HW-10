@@ -13,3 +13,9 @@ class DataURL {
     let episodes = "https://rickandmortyapi.com/api/episode/"
 }
 
+enum DataManagerKeys: String {
+    case charactersKey = "Characters"
+    case episodesKey = "Episodes"
+    case characterImagesKey = "CharacterImages"
+    
+}

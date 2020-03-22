@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		110870D414115242D9B76FFE /* Pods_Course___1st_swift_apps___HW_10.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B879BA814CAF1BC844C7451 /* Pods_Course___1st_swift_apps___HW_10.framework */; };
+		3A07FB0B241E588200483EA0 /* RealmDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A07FB0A241E588200483EA0 /* RealmDataManager.swift */; };
 		3A0A7BAD2413F906007E39E4 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A7BAC2413F906007E39E4 /* ImageView.swift */; };
 		3A0A7BB1241617AA007E39E4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A7BB0241617AA007E39E4 /* DataManager.swift */; };
 		3A0A7BB324164CCA007E39E4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A7BB224164CCA007E39E4 /* SettingsViewController.swift */; };
@@ -28,13 +29,14 @@
 		3A8B0686240A5BF500CF0849 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B0685240A5BF500CF0849 /* CharacterCollectionViewCell.swift */; };
 		3A8B0688240A5EC700CF0849 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B0687240A5EC700CF0849 /* JSONParser.swift */; };
 		3AEBB1AA240BE6CB00447550 /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBB1A9240BE6CB00447550 /* Episodes.swift */; };
-		3AEBB1AC240BE73D00447550 /* DataURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBB1AB240BE73D00447550 /* DataURL.swift */; };
+		3AEBB1AC240BE73D00447550 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBB1AB240BE73D00447550 /* Constants.swift */; };
 		3AEBB1AE240BECE500447550 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEBB1AD240BECE500447550 /* LoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B879BA814CAF1BC844C7451 /* Pods_Course___1st_swift_apps___HW_10.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Course___1st_swift_apps___HW_10.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AE89010040B294621341ABE /* Pods-Course - 1st swift apps - HW-10.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Course - 1st swift apps - HW-10.debug.xcconfig"; path = "Target Support Files/Pods-Course - 1st swift apps - HW-10/Pods-Course - 1st swift apps - HW-10.debug.xcconfig"; sourceTree = "<group>"; };
+		3A07FB0A241E588200483EA0 /* RealmDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataManager.swift; sourceTree = "<group>"; };
 		3A0A7BAC2413F906007E39E4 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		3A0A7BB0241617AA007E39E4 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3A0A7BB224164CCA007E39E4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +59,7 @@
 		3A8B0685240A5BF500CF0849 /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		3A8B0687240A5EC700CF0849 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		3AEBB1A9240BE6CB00447550 /* Episodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
-		3AEBB1AB240BE73D00447550 /* DataURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataURL.swift; sourceTree = "<group>"; };
+		3AEBB1AB240BE73D00447550 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3AEBB1AD240BECE500447550 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		9805C5BBED123B0D05D3B6EB /* Pods-Course - 1st swift apps - HW-10.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Course - 1st swift apps - HW-10.release.xcconfig"; path = "Target Support Files/Pods-Course - 1st swift apps - HW-10/Pods-Course - 1st swift apps - HW-10.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +90,7 @@
 				3A0A7BB0241617AA007E39E4 /* DataManager.swift */,
 				3A0A7BBC24168DC1007E39E4 /* UserDefaultsDataManager.swift */,
 				3A0A7BC024168F21007E39E4 /* PlistFileDataManager.swift */,
+				3A07FB0A241E588200483EA0 /* RealmDataManager.swift */,
 				3A0A7BC624169CBB007E39E4 /* ImageManager.swift */,
 			);
 			path = DataManagers;
@@ -113,7 +116,7 @@
 		3A0A7BC4241695C5007E39E4 /* DataStorage */ = {
 			isa = PBXGroup;
 			children = (
-				3AEBB1AB240BE73D00447550 /* DataURL.swift */,
+				3AEBB1AB240BE73D00447550 /* Constants.swift */,
 			);
 			path = DataStorage;
 			sourceTree = "<group>";
@@ -344,7 +347,7 @@
 				3A0A7BC124168F21007E39E4 /* PlistFileDataManager.swift in Sources */,
 				3A0A7BBD24168DC1007E39E4 /* UserDefaultsDataManager.swift in Sources */,
 				3A83F486240AC97E0012B642 /* CharacterViewController.swift in Sources */,
-				3AEBB1AC240BE73D00447550 /* DataURL.swift in Sources */,
+				3AEBB1AC240BE73D00447550 /* Constants.swift in Sources */,
 				3A0A7BB324164CCA007E39E4 /* SettingsViewController.swift in Sources */,
 				3A0A7BB5241681D8007E39E4 /* DataManagerable.swift in Sources */,
 				3A8B0669240A4D3300CF0849 /* SceneDelegate.swift in Sources */,
@@ -353,6 +356,7 @@
 				3A8B0684240A594E00CF0849 /* CharactersCollectionViewController.swift in Sources */,
 				3A0A7BAD2413F906007E39E4 /* ImageView.swift in Sources */,
 				3AEBB1AE240BECE500447550 /* LoadingViewController.swift in Sources */,
+				3A07FB0B241E588200483EA0 /* RealmDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

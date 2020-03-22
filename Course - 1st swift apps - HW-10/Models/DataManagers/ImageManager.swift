@@ -29,7 +29,7 @@ class ImageManager {
     }
     
     func getImageFromStorage(url: String) -> UIImage? {
-        guard let imagesData = DataManager.shared.manager.getCharacterImages() as? [String: Data] else { return nil }
+        let imagesData = DataManager.shared.manager.getCharacterImages()
         guard let imageData = imagesData[url] else { return nil }
         
         return UIImage(data: imageData)

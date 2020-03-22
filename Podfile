@@ -7,4 +7,5 @@ target 'Course - 1st swift apps - HW-10' do
 
   # Pods for Course - 1st swift apps - HW-10
 pod 'Alamofire'
+pod 'RealmSwift'
 end

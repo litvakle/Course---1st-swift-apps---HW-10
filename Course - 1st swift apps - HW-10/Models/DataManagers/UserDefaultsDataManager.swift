@@ -11,17 +11,11 @@ import UIKit
 
 class UserDefaultsDataManager: DataManagerable {
     
-    var charactersKey: String
-    var episodesKey: String
-    var characterImagesKey: String
+    let charactersKey = DataManagerKeys.charactersKey.rawValue
+    var episodesKey = DataManagerKeys.episodesKey.rawValue
+    var characterImagesKey = DataManagerKeys.characterImagesKey.rawValue
     
     private let userDefaults = UserDefaults.standard
-    
-    required init(charactersKey: String, episodesKey: String, characterImagesKey: String) {
-        self.charactersKey = charactersKey
-        self.episodesKey = episodesKey
-        self.characterImagesKey = characterImagesKey
-    }
     
     // MARK: - Characters
     func getCharacters() -> [RMCharacter] {
@@ -42,8 +36,8 @@ class UserDefaultsDataManager: DataManagerable {
     }
 
     // MARK: - Character images
-    func getCharacterImages() -> [String: Data?] {
-        if let images = userDefaults.value(forKey: characterImagesKey) as? [String: Data?] {
+    func getCharacterImages() -> [String: Data] {
+        if let images = userDefaults.value(forKey: characterImagesKey) as? [String: Data] {
             return images
         }
         
@@ -51,8 +45,8 @@ class UserDefaultsDataManager: DataManagerable {
     }
     
     func saveCharacterImage(url: String, image: UIImage?) {
-        guard var imagesData = getCharacterImages() as? [String: Data] else { return }
-        imagesData[url] = image?.pngData()
+        var imagesData = getCharacterImages()
+        imagesData[url] = image == nil ? nil : image?.pngData()
         userDefaults.set(imagesData, forKey: characterImagesKey)
     }
     

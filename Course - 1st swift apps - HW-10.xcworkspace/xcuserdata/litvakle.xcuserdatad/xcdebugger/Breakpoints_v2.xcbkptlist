@@ -52,5 +52,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DC7788BD-B835-4A93-A58B-6088E83A4A6A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Course - 1st swift apps - HW-10/ViewControllers/LoadingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DC7788BD-B835-4A93-A58B-6088E83A4A6A - 4926d341f111dfa"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Course___1st_swift_apps___HW_10.LoadingViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "Course - 1st swift apps - HW-10"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/litvakle/developer/Course%20-%201st%20swift%20apps/HW%2010-01/Course%20-%201st%20swift%20apps%20-%20HW-10/Course%20-%201st%20swift%20apps%20-%20HW-10/ViewControllers/LoadingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "DC7788BD-B835-4A93-A58B-6088E83A4A6A - f087bb94c3123496"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Course___1st_swift_apps___HW_10.LoadingViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "Course - 1st swift apps - HW-10"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/litvakle/developer/Course%20-%201st%20swift%20apps/HW%2010-01/Course%20-%201st%20swift%20apps%20-%20HW-10/Course%20-%201st%20swift%20apps%20-%20HW-10/ViewControllers/LoadingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "132">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

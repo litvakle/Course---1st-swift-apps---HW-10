@@ -13,7 +13,7 @@ class LoadingViewController: UIViewController {
     // MARK: - Override metrhods
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         DataManager.shared.loadData {
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "showMain", sender: self)
